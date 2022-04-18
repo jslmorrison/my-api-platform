@@ -1,0 +1,41 @@
+---
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./container/Containerfile
+    container_name: myapiplatform_app
+    labels:
+      - "traefik.docker.network=traefik-web"
+      - "traefik.enable=true"
+      - "traefik.http.routers.myapiplatform.rule=Host(`dev.my-api-platform.local`)"
+      - "traefik.http.routers.myapiplatform.tls=true"
+      - "traefik.http.routers.myapiplatform.entrypoints=websecure"
+      - "traefik.http.routers.myapiplatform.tls.domains[2].main=dev.my-api-platform.local"
+    networks:
+      - traefik-web
+    volumes:
+      - ./:/var/www/html/my-api-platform
+      - ./container/site.conf:/etc/apache2/sites-enabled/000-default.conf
+  mariadb:
+    image: mariadb:10.6
+    container_name: myapiplatform_db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.tcp.routers.db.rule=HostSNI(`*`)"
+      - "traefik.tcp.services.db.loadbalancer.server.port=3306"
+      - "traefik.tcp.routers.db.entrypoints=mariadb"
+    environment:
+      - MYSQL_ROOT_PASSWORD=myapiplatform
+      - MYSQL_DATABASE=myapiplatform
+    networks:
+      - traefik-web
+    volumes:
+      - data:/var/lib/mysql
+
+volumes:
+  data:
+networks:
+  traefik-web:
+    external: true

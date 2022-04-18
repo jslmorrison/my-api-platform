@@ -8,7 +8,7 @@ use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Uid\Uuid;
 
-#[ORM\Entity(repositoryClass: UserRepository::class)]
+#[ORM\Entity(repositoryClass: UserDoctrineRepository::class)]
 #[ORM\Table(name: '`users`')]
 class User
 {

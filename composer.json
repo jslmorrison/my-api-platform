@@ -84,6 +84,7 @@
         }
     },
     "require-dev": {
-        "phpspec/phpspec": "^7.2"
+        "phpspec/phpspec": "^7.2",
+        "symfony/maker-bundle": "^1.38"
     }
 }

@@ -81,5 +81,8 @@
             "allow-contrib": false,
             "require": "6.0.*"
         }
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^7.2"
     }
 }

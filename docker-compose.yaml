@@ -18,6 +18,7 @@ services:
     volumes:
       - ./:/var/www/html/my-api-platform
       - ./container/site.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./container/xdebug.ini:/usr/local/etc/php/conf.d/container-php-ext-xdebug.ini
   mariadb:
     image: mariadb:10.6
     container_name: myapiplatform_db

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\DTO\UserInput;
 use App\DTO\UserOutput;
 use App\Repository\UserDoctrineRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -12,7 +13,7 @@ use Symfony\Component\Uid\Uuid;
 
 #[ORM\Entity(repositoryClass: UserDoctrineRepository::class)]
 #[ORM\Table(name: '`users`')]
-#[ApiResource(output: UserOutput::class)]
+#[ApiResource(input: UserInput::class, output: UserOutput::class)]
 class User
 {
     #[ORM\Id]

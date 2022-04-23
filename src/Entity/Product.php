@@ -5,13 +5,15 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\DTO\ProductInput;
+use App\DTO\ProductOutput;
 use App\Repository\ProductDoctrineRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Uid\Uuid;
 
 #[ORM\Entity(repositoryClass: ProductDoctrineRepository::class)]
 #[ORM\Table(name: '`products`')]
-#[ApiResource()]
+#[ApiResource(input: ProductInput::class, output: ProductOutput::class)]
 class Product
 {
     #[ORM\Id]

@@ -7,7 +7,6 @@ namespace App\DataFixtures;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Faker\Factory;
 
 final class AppFixtures extends Fixture
 {
@@ -15,10 +14,10 @@ final class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        $faker = Factory::create();
+        $faker = \Faker\Factory::create();
 
         for ($i = 0; $i < 100; $i++) {
-            $user = User::namedWithEmail($faker->name, $faker->safeEmail);
+            $user = User::namedWithEmail($faker->name(), $faker->safeEmail());
             $manager->persist($user);
         }
 

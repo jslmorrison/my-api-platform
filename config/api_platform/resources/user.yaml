@@ -4,4 +4,7 @@ App\Entity\User:
     input: App\DTO\UserInput
     output: App\DTO\UserOutput
   collectionOperations: ~
-  itemOperations: ~
+  itemOperations:
+    get: ~
+    patch: ~
+    delete: ~

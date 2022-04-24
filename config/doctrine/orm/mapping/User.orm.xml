@@ -1,0 +1,17 @@
+<doctrine-mapping xmlns="https://doctrine-project.org/schemas/orm/doctrine-mapping"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://doctrine-project.org/schemas/orm/doctrine-mapping
+                        https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="App\Entity\User" table="users"
+        repository-class="App\Repository\UserDoctrineRepository">
+        <id name="id" type="uuid">
+            <generator strategy="NONE"/>
+        </id>
+        <field name="name" type="string" />
+        <field name="email" type="string" unique="true" />
+        <field name="createdAt" type="datetime" />
+        <field name="enabled" type="boolean" />
+    </entity>
+
+</doctrine-mapping>

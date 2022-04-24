@@ -1,0 +1,7 @@
+---
+App\Entity\User:
+  attributes:
+    input: App\DTO\UserInput
+    output: App\DTO\UserOutput
+  collectionOperations: ~
+  itemOperations: ~

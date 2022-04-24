@@ -1,0 +1,7 @@
+---
+App\Entity\Product:
+  attributes:
+    input: App\DTO\ProductInput
+    output: App\DTO\ProductOutput
+  collectionOperations: ~
+  itemOperations: ~

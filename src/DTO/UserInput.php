@@ -6,6 +6,6 @@ namespace App\DTO;
 
 final class UserInput
 {
-    public string $name;
-    public string $email;
+    public string $name = '';
+    public string $email = '';
 }

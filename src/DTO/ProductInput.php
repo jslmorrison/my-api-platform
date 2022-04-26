@@ -6,5 +6,5 @@ namespace App\DTO;
 
 final class ProductInput
 {
-    public string $name;
+    public string $name = '';
 }

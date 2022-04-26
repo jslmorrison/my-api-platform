@@ -4,4 +4,7 @@ App\Entity\Product:
     input: App\DTO\ProductInput
     output: App\DTO\ProductOutput
   collectionOperations: ~
-  itemOperations: ~
+  itemOperations:
+    get: ~
+    patch: ~
+    delete: ~

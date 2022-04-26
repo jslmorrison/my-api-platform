@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use App\DTO\ProductInput;
 use Symfony\Component\Uid\Uuid;
 
 class Product
@@ -32,5 +33,12 @@ class Product
     public function name(): string
     {
         return $this->name;
+    }
+
+    public function updateFromDTO(ProductInput $dto): self
+    {
+        $this->name = $dto->name;
+
+        return $this;
     }
 }

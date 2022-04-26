@@ -9,3 +9,9 @@ App\Entity\User:
       - NotBlank: ~
       - Email: ~
 
+App\Entity\Product:
+  constraints:
+      - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: name
+  properties:
+    name:
+      - NotBlank: ~

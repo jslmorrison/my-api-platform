@@ -21,7 +21,7 @@ final class AppFixtures extends Fixture
             $user = User::namedWithEmail($faker->name(), $faker->safeEmail());
             $manager->persist($user);
 
-            $product = Product::named($faker->word());
+            $product = Product::named($faker->unique()->word());
             $manager->persist($product);
         }
 

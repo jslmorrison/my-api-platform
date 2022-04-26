@@ -8,7 +8,7 @@
         <id name="id" type="uuid">
             <generator strategy="NONE"/>
         </id>
-        <field name="name" type="string" />
+        <field name="name" type="string" unique="true" />
     </entity>
 
 </doctrine-mapping>

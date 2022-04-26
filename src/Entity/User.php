@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use App\DTO\UserInput;
 use Symfony\Component\Uid\Uuid;
 
 class User
@@ -58,5 +59,13 @@ class User
     public function enable(): void
     {
         $this->enabled = true;
+    }
+
+    public function updateFromDTO(UserInput $dto): self
+    {
+        $this->name = $dto->name;
+        $this->email = $dto->email;
+
+        return $this;
     }
 }

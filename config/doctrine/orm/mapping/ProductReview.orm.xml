@@ -1,0 +1,18 @@
+<doctrine-mapping xmlns="https://doctrine-project.org/schemas/orm/doctrine-mapping"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://doctrine-project.org/schemas/orm/doctrine-mapping
+                        https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="App\Entity\ProductReview" table="`product_reviews`"
+        repository-class="App\Repository\ProductReviewDoctrineRepository">
+         <id name="id" type="uuid">
+            <generator strategy="NONE"/>
+        </id>
+        <field name="review" type="text" />
+        <field name="createdAt" type="datetime" />
+        <field name="active" type="boolean" />
+
+        <many-to-one field="user" target-entity="App\Entity\User" nullable="false" />
+        <many-to-one field="product" target-entity="App\Entity\Product" nullable="false" />
+    </entity>
+</doctrine-mapping>

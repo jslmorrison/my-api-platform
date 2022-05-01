@@ -1,0 +1,10 @@
+---
+App\Entity\ProductReview:
+  attributes:
+    input: ~
+    output: App\DTO\ProductReviewOutput
+  collectionOperations:
+    get: ~
+    post: ~
+  itemOperations:
+    get: ~

@@ -1,0 +1,5 @@
+---
+App\DTO\ProductOutput:
+  attributes:
+    name:
+      groups: ['product:read', 'product_review:read']

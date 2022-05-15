@@ -1,6 +1,10 @@
 ---
 App\Entity\Product:
   attributes:
+    normalization_context:
+      groups: ['product:read', 'product_review:read']
+    # denormalization_context:
+    #   groups: ['product:write']
     input: App\DTO\ProductInput
     output: App\DTO\ProductOutput
   collectionOperations: ~

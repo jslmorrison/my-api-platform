@@ -1,0 +1,14 @@
+---
+App\Entity\ProductReview:
+  attributes:
+    normalization_context:
+      groups: ['product_review:read']
+    # denormalization_context:
+    #   groups: ['product_review:write']
+    input: App\DTO\ProductReviewInput
+    output: App\DTO\ProductReviewOutput
+  collectionOperations:
+    get: ~
+    post: ~
+  itemOperations:
+    get: ~

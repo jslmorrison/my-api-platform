@@ -1,0 +1,11 @@
+---
+App\DTO\UserOutput:
+  attributes:
+    name:
+      groups: ['user:read', 'product_review:read']
+    email:
+      groups: ['user:read', 'product_review:read']
+    createdAt:
+      groups: ['user:read']
+    enabled:
+      groups: ['user:read']

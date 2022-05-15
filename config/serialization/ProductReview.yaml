@@ -1,0 +1,13 @@
+---
+App\DTO\ProductReviewOutput:
+  attributes:
+    product:
+      groups: ['product_review:read']
+    user:
+      groups: ['product_review:read']
+    review:
+      groups: ['product_review:read']
+    createdAt:
+      groups: ['product_review:read']
+    active:
+      groups: ['product_review:read']

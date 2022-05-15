@@ -15,3 +15,14 @@ App\Entity\Product:
   properties:
     name:
       - NotBlank: ~
+
+App\Entity\ProductReview:
+  properties:
+    user:
+      - NotBlank: ~
+      - Type:
+          type: App\Entity\User
+    product:
+      - NotBlank: ~
+    review:
+      - NotBlank: ~
